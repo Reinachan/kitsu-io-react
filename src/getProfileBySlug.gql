@@ -1,0 +1,48 @@
+query($slug:String!) {
+  profile: findProfileBySlug(slug: $slug) {
+    about
+    name
+    posts (first: 5) {
+      nodes {
+        author {name}
+        createdAt
+        content
+        id
+        comments (first: 5) {
+          nodes {
+          	...comment
+            replies (first: 5) {
+              nodes {
+                ...comment
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+fragment user on Profile {
+  name
+  slug
+  url
+  avatarImage {
+    views {
+      name,
+      url
+    }
+  }
+}
+
+fragment comment on Comment {
+  id
+	author {
+	  ...user
+	}
+	createdAt
+	content
+	likes (first: 10) {
+	 	totalCount
+	}
+}

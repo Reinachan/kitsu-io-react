@@ -1,0 +1,15 @@
+@import '_colours-and-fonts';
+
+.post-with-content {
+    background-color: $post-background-colour;
+    margin: 5px;
+}
+.poster-user {
+    background-color: $poster-username-background-colour;
+    margin-bottom: 10px;
+    padding: 10px;
+}
+.post-content {
+    padding: 10px;
+    white-space: pre-line;
+}

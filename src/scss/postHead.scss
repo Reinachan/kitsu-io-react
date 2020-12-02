@@ -1,0 +1,34 @@
+@import '_colours-and-fonts';
+
+.head {
+    font-family: $base-font;
+    display: grid;
+    grid-auto-rows: 1fr;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto auto;
+
+    img {
+        grid-column: 0;
+        grid-row: 1 / span 3;
+        margin-right: 1em;
+        border-radius: 16px;
+    }
+
+    a {
+        margin: 0.125em;
+        font-size: 0.75rem;
+        color: orange;
+    }
+
+    p {
+        margin: 0.125em;
+        grid-column: 2;
+        font-size: 1.25rem;
+        font-weight: bold;
+
+        &:last-child {
+            font-size: 0.75rem;
+            color: grey;
+        }
+    }
+}
