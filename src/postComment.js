@@ -1,5 +1,5 @@
 import React from 'react'
-import PostHead from "./postHead";
+import CommentHead from "./commentHead";
 import './scss/post.scss'
 
 export default function PostComment(props) {
@@ -9,7 +9,7 @@ export default function PostComment(props) {
         <>
             <div key={x.id} className="post-with-content">
               <a href={x.author}/>
-              <div className="poster-user"><PostHead user={x.author} date={x.createdAt}/></div>
+              <div className="commenter-user"><CommentHead user={x.author} date={x.createdAt}/></div>
               <div className="post-content">{x.content}</div>
             </div>
             {

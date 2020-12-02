@@ -4,7 +4,7 @@ query($slug:String!) {
     name
     posts (first: 5) {
       nodes {
-        author {name}
+        author { ...user}
         createdAt
         content
         id

@@ -1,6 +1,6 @@
 @import '_colours-and-fonts';
 
-.post-head {
+.comment-head {
     color: white;
     text-decoration: none;
     font-family: $base-font;
@@ -9,7 +9,7 @@
     grid-template-columns: auto 1fr;
     grid-template-rows: auto auto auto;
     margin-left: 10px;
-    padding-bottom: 15px;
+    margin-bottom: 1px;
 
     img {
         grid-column: 0;

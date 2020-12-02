@@ -11,9 +11,10 @@ export default function Post(props) {
             <div key={x.id} className="post-with-content">
               <a href={x.author}/>
               <div className="poster-user"><PostHead user={x.author} date={x.createdAt}/></div>
+              <div className="tag-divider"><a>#Cute  •  #Screencaps  •  #Blushes  •  #Quick-update</a></div>
               <div className="post-content">{x.content}</div>
             </div>
-            <div className="comment-container">
+            <div className="comment-container all-comments">
                 {x.comments.nodes.map(y => <PostComment data={y} />)}
             </div>
         </>

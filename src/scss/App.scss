@@ -3,4 +3,10 @@
 body {
     background-color: $background-colour;
     color: white;
+    font-family: $base-font;
+}
+a {
+    margin: 0;
+    font-size: 0.7rem;
+    color: $highlighted-text;
 }
