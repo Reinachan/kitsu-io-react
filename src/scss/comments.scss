@@ -1,0 +1,32 @@
+@import '_colours-and-fonts';
+
+.comment-with-content {
+    border-radius: 15px;
+    background: $comment-foreground;
+    margin-bottom: 20px;
+    margin-top: 0px;
+
+    .commenter-user {
+        margin-bottom: 0px;
+        padding: 10px;
+    }
+    .post-content {
+        padding-top: 10px;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 30px;
+        white-space: pre-line;
+    }
+}
+.reply-container {
+    .comment-with-content {
+        background: $reply-foreground;
+        width: 90%;
+        margin-left: auto;
+        margin-right: 0;
+
+        &:first-child {
+            margin-top: -40px;
+        }
+    }
+}

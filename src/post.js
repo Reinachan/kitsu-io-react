@@ -8,6 +8,7 @@ export default function Post(props) {
       
     return (
         <>
+        <div className="post-background">
             <div key={x.id} className="post-with-content">
               <a href={x.author}/>
               <div className="poster-user"><PostHead user={x.author} date={x.createdAt}/></div>
@@ -16,7 +17,13 @@ export default function Post(props) {
             </div>
             <div className="comment-container all-comments">
                 {x.comments.nodes.map(y => <PostComment data={y} />)}
+
+                <div className="comment-box">
+                    <input type="text"></input>
+                    <input type="button" value="send"></input>
+                </div>
             </div>
+        </div>
         </>
     )
 }

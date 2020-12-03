@@ -21,7 +21,7 @@ export default function Posts(props) {
         {
           (!loading)
           ? data.profile.posts.nodes.map(x => <Post data={x}/>)
-          : <div class="loading-posts"> Loading Posts </div>
+          : <div class="loading-posts"></div>
         }
         </div>
         </>

@@ -2,7 +2,7 @@ query($slug:String!) {
   profile: findProfileBySlug(slug: $slug) {
     about
     name
-    posts (first: 5) {
+    posts (first: 20) {
       nodes {
         author { ...user}
         createdAt

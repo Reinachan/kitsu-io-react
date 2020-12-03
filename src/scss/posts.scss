@@ -1,6 +1,6 @@
 @import '_colours-and-fonts';
 
-%post-size {
+.posts-list {
     margin: 5px;
     width: 95%;
     max-width: 500px;
@@ -8,45 +8,48 @@
     margin-right: auto;
 }
 
-.post-with-content {
-    border-radius: 15px;
-    background-color: $post-background-colour;
-    @extend %post-size;
-    margin-bottom: 0;
-    margin-top: 20px;
-}
-.tag-divider {
-    width: 97%;
-    height: 25px;
-    background-color: $tag-divider;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top:-17px;
-    border-radius: 7px 0 0 7px;
-    line-height: 22px;
-    a {
-        font-size: 0.7rem;
-        color: $highlighted-text;
-        font-weight: bold;
-        margin-left: 10px;
+// loading animation
+@mixin loading-posts($activeColor: #FF8D78, $selector: "&::before", $time: 1.5s) {
+    @keyframes spinner {
+        0% {
+            transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        }
+
+        100% {
+            transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        }
+    }
+    
+    animation-play-state: running;
+    opacity: 1;
+    position: relative;
+    
+    &.-paused { 
+        animation-play-state: paused; 
+        opacity: 0.2;
+        transition: opacity linear 0.1s;
+    }
+
+    #{$selector} {
+        animation: $time linear infinite spinner;
+        animation-play-state: inherit;
+        border: solid 3px #dedede;
+        border-bottom-color: #{$activeColor};
+        border-radius: 50%;
+        content: "";
+        height: 40px;
+        left: 50%;
+        opacity: inherit;
+        position: absolute;
+        top: 50%; 
+        transform: translate3d(-50%, -50%, 0);
+        width: 40px;
+        will-change: transform;
     }
 }
-.poster-user {
-    background-color: $poster-username-background-colour;
-    border-radius: 15px 15px 5px 5px;
-    margin-bottom: 0px;
-    padding: 10px;
-}
-.commenter-user {
-    margin-bottom: 0px;
-    padding: 10px;
-}
-.post-content {
-    padding: 20px;
-    white-space: pre-line;
-}
-.all-comments {
-    background-color: $comment-background;
-    @extend %post-size;
-    margin-top: 0;
+
+
+.loading-posts {
+    @include loading-posts;
+    height: 100vh;
 }
