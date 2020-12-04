@@ -3,8 +3,8 @@
 .comment-with-content {
     border-radius: 15px;
     background: $comment-foreground;
-    margin-bottom: 20px;
-    margin-top: 0px;
+    margin: 0 0 20px auto;
+    width: 98%;
 
     .commenter-user {
         margin-bottom: 0px;
@@ -24,6 +24,7 @@
         width: 90%;
         margin-left: auto;
         margin-right: 0;
+        box-shadow: 0 4px 14px #000a;
 
         &:first-child {
             margin-top: -40px;

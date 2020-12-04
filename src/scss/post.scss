@@ -1,13 +1,16 @@
 @import '_colours-and-fonts';
 
 .post-content {
-    padding: 10px;
+    padding: 15px;
     white-space: pre-line;
+    word-wrap: break-word;
+    padding-bottom: 30px;
 }
 .post-with-content {
     border-radius: 15px;
     background: $post-background-colour;
     margin-bottom: 20px;
+    box-shadow: 0 8px 28px #000a;
 }
 .tag-divider {
     width: 97%;
@@ -15,7 +18,7 @@
     background: $tag-divider;
     margin-left: auto;
     margin-right: 0;
-    margin-top:-17px;
+    margin-top: -17px;
     border-radius: 7px 0 0 7px;
     line-height: 22px;
     a {
@@ -36,14 +39,16 @@
 }
 .post-background {
     background: $comment-background;
+    border-radius: 15px;
+    box-shadow: 0 2px 20px #000a;
 }
 .comment-box {
     background: $reply-foreground;
     width: 100%;
-    height:50px;
+    height: 50px;
     margin-bottom: 40px;
     input {
-        display:flex;
+        display: flex;
         background: $post-background-colour;
     }
 }

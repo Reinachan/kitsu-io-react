@@ -1,5 +1,8 @@
 @import '_colours-and-fonts';
 
+* {
+    box-sizing: border-box;
+}
 body {
     background: $background-colour;
     color: white;

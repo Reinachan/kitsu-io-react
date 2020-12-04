@@ -2,14 +2,19 @@
 
 .posts-list {
     margin: 5px;
-    width: 95%;
+    margin-top: 100px;
+    width: 100%;
     max-width: 500px;
     margin-left: auto;
     margin-right: auto;
 }
 
 // loading animation
-@mixin loading-posts($activeColor: #FF8D78, $selector: "&::before", $time: 1.5s) {
+@mixin loading-posts(
+    $activeColor: #ff8d78,
+    $selector: '&::before',
+    $time: 1.5s
+) {
     @keyframes spinner {
         0% {
             transform: translate3d(-50%, -50%, 0) rotate(0deg);
@@ -19,13 +24,13 @@
             transform: translate3d(-50%, -50%, 0) rotate(360deg);
         }
     }
-    
+
     animation-play-state: running;
     opacity: 1;
     position: relative;
-    
-    &.-paused { 
-        animation-play-state: paused; 
+
+    &.-paused {
+        animation-play-state: paused;
         opacity: 0.2;
         transition: opacity linear 0.1s;
     }
@@ -36,18 +41,17 @@
         border: solid 3px #dedede;
         border-bottom-color: #{$activeColor};
         border-radius: 50%;
-        content: "";
+        content: '';
         height: 40px;
         left: 50%;
         opacity: inherit;
         position: absolute;
-        top: 50%; 
+        top: 50%;
         transform: translate3d(-50%, -50%, 0);
         width: 40px;
         will-change: transform;
     }
 }
-
 
 .loading-posts {
     @include loading-posts;
