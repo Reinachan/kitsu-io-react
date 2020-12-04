@@ -25,9 +25,10 @@
         margin-left: auto;
         margin-right: 0;
         box-shadow: 0 4px 14px #000a;
+        transform: translateY(-40px);
 
         &:first-child {
-            margin-top: -40px;
+            /* margin-top: -40px; */
         }
     }
 }

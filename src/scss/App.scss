@@ -13,3 +13,7 @@ a {
     font-size: 0.7rem;
     color: $highlighted-text;
 }
+
+body {
+    @include scrollbars(5px, $highlighted-text, #0000);
+}
