@@ -1,11 +1,54 @@
 @import '_colours-and-fonts';
 
+.sneky-trick {
+    max-height: auto;
+}
+
 .post-content {
+    transition: all 0.25s ease-in-out;
     padding: 15px;
     white-space: pre-line;
     word-wrap: break-word;
     padding-bottom: 30px;
+    max-height: 200px;
+    overflow: hidden;
+    position: relative;
+
+    div {
+        max-height: 100%;
+    }
 }
+
+.markdown {
+    margin-bottom: 15px;
+}
+
+.post-content .read-more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0;
+    border-radius: 15px;
+    padding: 30px 0;
+    height: 50px;
+    color: $highlighted-text;
+
+    // make the text unselectable
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* IE10+/Edge */
+    user-select: none; /* Standard */
+
+    /* "transparent" only works here because == rgba(0,0,0,0) */
+    background-image: linear-gradient(to bottom, #43344300, $post-background-colour);
+}
+
+.read-more {
+    cursor: pointer;
+}
+
 .post-with-content {
     border-radius: 15px;
     background: $post-background-colour;
