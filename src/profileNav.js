@@ -7,22 +7,15 @@ import './scss/profile-nav.scss';
 const query = loader('./getProfileBySlug.gql');
 
 export default function ProfileNav(props) {
-    const { data, loading } = useQuery(query, {
-        variables: {
-            slug: props.slug,
-        },
-    });
-    console.log(data);
+	const { data, loading } = useQuery(query, {
+		variables: {
+			slug: props.slug,
+		},
+	});
 
-    return (
-        <>
-            <div className="profile-nav">
-                {!loading ? (
-                    <UserProfile data={data.profile} />
-                ) : (
-                    <div className="loading"></div>
-                )}
-            </div>
-        </>
-    );
+	return (
+		<>
+			<div className="profile-nav">{!loading ? <UserProfile data={data.profile} /> : <div className="loading"></div>}</div>
+		</>
+	);
 }
