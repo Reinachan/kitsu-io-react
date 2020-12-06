@@ -1,0 +1,39 @@
+@import '_colours-and-fonts';
+
+.sidebar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	background-color: $sidebar;
+	width: 300px;
+	height: 100%;
+}
+.kitsu-logo {
+	margin-top: 30px;
+	margin-bottom: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+}
+
+.main-navigation {
+	nav ul li {
+		list-style: none;
+		margin-bottom: 30px;
+		a {
+			text-decoration: none;
+			text-transform: uppercase;
+			color: white;
+			font-weight: 800;
+			font-size: 1em;
+
+			&:active {
+				color: $highlighted-text;
+			}
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+	}
+}

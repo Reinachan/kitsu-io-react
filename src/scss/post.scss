@@ -1,97 +1,102 @@
 @import '_colours-and-fonts';
 
 .sneky-trick {
-    max-height: auto;
-}
-
-.post-content {
-    transition: all 0.25s ease-in-out;
-    padding: 15px;
-    white-space: pre-line;
-    word-wrap: break-word;
-    padding-bottom: 30px;
-    max-height: 200px;
-    overflow: hidden;
-    position: relative;
-
-    div {
-        max-height: 100%;
-    }
+	max-height: auto;
 }
 
 .markdown {
-    margin-bottom: 15px;
+	margin-bottom: 15px;
+}
+
+.post-content {
+	transition: all 0.25s ease-in-out;
+	padding: 15px;
+	white-space: pre-line;
+	word-wrap: break-word;
+	padding-bottom: 45px;
+	max-height: 200px;
+	overflow: hidden;
+	position: relative;
+
+	div {
+		max-height: 100%;
+	}
 }
 
 .post-content .read-more {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    text-align: center;
-    margin: 0;
-    border-radius: 15px;
-    padding: 30px 0;
-    height: 50px;
-    color: $highlighted-text;
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	margin: 0;
+	border-radius: 15px;
+	padding: 30px 0;
+	height: 50px;
+	color: $highlighted-text;
 
-    // make the text unselectable
-    -webkit-user-select: none; /* Safari */
-    -moz-user-select: none; /* Firefox */
-    -ms-user-select: none; /* IE10+/Edge */
-    user-select: none; /* Standard */
+	// make the text unselectable
+	-webkit-user-select: none; /* Safari */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* IE10+/Edge */
+	user-select: none; /* Standard */
 
-    /* "transparent" only works here because == rgba(0,0,0,0) */
-    background-image: linear-gradient(to bottom, #43344300, $post-background-colour);
+	/* "transparent" only works here because == rgba(0,0,0,0) */
+	background-image: linear-gradient(to bottom, #43344300, $post-background-colour);
 }
 
 .read-more {
-    cursor: pointer;
+	cursor: pointer;
 }
 
 .post-with-content {
-    border-radius: 15px;
-    background: $post-background-colour;
-    margin-bottom: 20px;
-    box-shadow: 0 8px 28px #000a;
+	border-radius: 15px;
+	background: $post-background-colour;
+	margin-bottom: 20px;
+	box-shadow: 0 8px 28px #000a;
 }
+
+.post-likes {
+	height: 50px;
+}
+
 .tag-divider {
-    width: 97%;
-    height: 25px;
-    background: $tag-divider;
-    margin-left: auto;
-    margin-right: 0;
-    margin-top: -17px;
-    border-radius: 7px 0 0 7px;
-    line-height: 22px;
-    a {
-        font-size: 0.7rem;
-        color: $highlighted-text;
-        font-weight: bold;
-        margin-left: 10px;
-    }
+	width: 97%;
+	height: 25px;
+	background: $tag-divider;
+	margin-left: auto;
+	margin-right: 0;
+	margin-top: -17px;
+	border-radius: 7px 0 0 7px;
+	line-height: 22px;
+	a {
+		font-size: 0.7rem;
+		color: $highlighted-text;
+		font-weight: bold;
+		margin-left: 10px;
+	}
 }
 .poster-user {
-    background: $poster-username-foreground-colour;
-    border-radius: 15px 15px 5px 5px;
-    margin-bottom: 0px;
-    padding: 10px;
+	background: $poster-username-foreground-colour;
+	border-radius: 15px 15px 5px 5px;
+	margin-bottom: 0px;
+	padding: 10px;
 }
 .all-comments {
-    background: $comment-background;
+	background: $comment-background;
 }
 .post-background {
-    background: $comment-background;
-    border-radius: 15px;
-    box-shadow: 0 2px 20px #000a;
+	background: $comment-background;
+	border-radius: 15px;
+	box-shadow: 0 2px 20px #000a;
 }
 .comment-box {
-    background: $reply-foreground;
-    width: 100%;
-    height: 50px;
-    margin-bottom: 40px;
-    input {
-        display: flex;
-        background: $post-background-colour;
-    }
+	background: $reply-foreground;
+	width: 100%;
+	height: 50px;
+	margin-bottom: 40px;
+	input {
+		display: flex;
+		background: $post-background-colour;
+	}
 }
