@@ -18,20 +18,20 @@ export default function App() {
                     <nav>
                         <ul>
                             <li>
-                                <Link to="/">User</Link>
+                                <Link to="/user">User</Link>
                             </li>
                             <li>
                                 <Link to="/about">Library</Link>
                             </li>
                             <li>
-                                <Link to="/community">Community</Link>
+                                <Link to="/">Community</Link>
                             </li>
                         </ul>
                     </nav>
 
                     <ProfileNav slug="Reinachan" />
                     <Switch>
-                        <Route path="/community">
+                        <Route path="/">
                             <Posts slug="Reinachan" />
                         </Route>
                     </Switch>
