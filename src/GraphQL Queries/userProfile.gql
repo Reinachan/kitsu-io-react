@@ -1,0 +1,10 @@
+query($slug: String!) {
+	profile: findProfileBySlug(slug: $slug) {
+		name
+		avatarImage {
+			views {
+				url
+			}
+		}
+	}
+}

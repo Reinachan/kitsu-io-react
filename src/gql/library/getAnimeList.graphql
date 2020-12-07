@@ -1,0 +1,17 @@
+query GetAnimeList($slug: String!) {
+	profile: findProfileBySlug(slug: $slug) {
+		library {
+			completed(mediaType: ANIME, first: 20) {
+				nodes {
+					media {
+						posterImage {
+							views {
+								url
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

@@ -21,16 +21,15 @@
 	nav ul li {
 		list-style: none;
 		margin-bottom: 30px;
+		.active-tab {
+			color: $highlighted-text;
+		}
 		a {
 			text-decoration: none;
 			text-transform: uppercase;
 			color: white;
 			font-weight: 800;
 			font-size: 1em;
-
-			&:active {
-				color: $highlighted-text;
-			}
 			&:hover {
 				text-decoration: underline;
 			}

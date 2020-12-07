@@ -1,8 +1,8 @@
 import React from 'react';
 
 type CollapsedTextProps = {
-	children: React.ReactChildren,
-	collapsed: boolean
+	children: any,
+	collapsed: boolean | null | undefined
 };
 
 /**
@@ -10,7 +10,7 @@ type CollapsedTextProps = {
  */
 export default class CollapsedText extends React.Component<CollapsedTextProps> {
 	_collapsed: boolean = true
-	children: React.ReactChildren
+	children: any
 	contentDiv: React.RefObject<HTMLDivElement>
 	actionField: React.RefObject<HTMLParagraphElement>
 	
@@ -23,7 +23,7 @@ export default class CollapsedText extends React.Component<CollapsedTextProps> {
 		super(props);
 
 		this.children = props.children;
-		this._collapsed = props.collapsed;
+		this._collapsed = props.collapsed ?? true;
 		this.contentDiv = React.createRef();
 		this.actionField = React.createRef();
 	}
@@ -46,7 +46,7 @@ export default class CollapsedText extends React.Component<CollapsedTextProps> {
 	}
 
 	componentWillReceiveProps(props: CollapsedTextProps) {
-		this.collapsed = props.collapsed;
+		this.collapsed = props.collapsed ?? this._collapsed;
 	}
 
 	updateComponentState() {

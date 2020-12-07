@@ -1,12 +1,25 @@
 import React from 'react';
-import '../scss/posts.scss';
+import LibraryList from '../LibraryList';
+import '../scss/library.scss';
 
 
 export default function Library() {
 
 	return (
 		<>
-    <h1>Library</h1>
+		<div className="profile-banner">
+			<img className="banner-image" alt="banner" src="http://images4.fanpop.com/image/photos/20100000/k-on-k-on-20132940-2560-1440.jpg" width="100%" />
+			<div className="img-fade-out" />
+		</div> 
+		<div className="page-divider">
+		<h1>Anime</h1> {/* <hr /> */}
+		</div>
+
+		<div className="library-list">
+			<LibraryList />
+		</div>
+
+
 		</>
 	);
 }

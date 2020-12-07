@@ -1,6 +1,5 @@
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import React from 'react';
-import ProfileNav from './profileNav';
 import './scss/nav.scss';
 
 export default function Nav() {
@@ -8,25 +7,31 @@ export default function Nav() {
 			<>
 				<div className="sidebar">
 				<div className="kitsu-logo">
-					<img src="./kitsu-logo.svg" alt="Kitsu Logo" />
+					<img src="../kitsu-logo.svg" alt="Kitsu Logo" />
 				</div>
 				<div className="main-navigation">
 					<nav>
 						<ul>
 							<li>
-								<Link to="/User">User</Link>
+								<NavLink activeClassName="active-tab" to="/user/">User</NavLink>
 							</li>
 							<li>
-								<Link to="/library">Library</Link>
+								<NavLink activeClassName="active-tab" to="/library">Library</NavLink>
 							</li>
 							<li>
-								<Link to="/">Community</Link>
+								<NavLink activeClassName="active-tab" to="/community">Community</NavLink>
 							</li>
 							<li>
-								<Link to="/browse">Browse</Link>
+								<NavLink activeClassName="active-tab" to="/browse" isActive={(match, location) => {
+									if (!match && !/\/(anime|manga)\//.test(location.pathname)) {
+								      return false;
+								    }
+								
+								    return true;
+								  }}>Browse</NavLink>
 							</li>
 							<li>
-								<Link to="/groups">Groups</Link>
+								<NavLink activeClassName="active-tab" to="/groups">Groups</NavLink>
 							</li>
 						</ul>
 					</nav>

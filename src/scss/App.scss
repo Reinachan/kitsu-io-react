@@ -1,19 +1,30 @@
 @import '_colours-and-fonts';
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 body {
-    background: $background-colour;
-    color: white;
-    font-family: $base-font;
+	background: $background-colour;
+	color: white;
+	font-family: $base-font;
+	margin: 0;
 }
 a {
-    margin: 0;
-    font-size: 0.7rem;
-    color: $highlighted-text;
+	margin: 0;
+	font-size: 0.7rem;
+	color: $highlighted-text;
 }
 
 body {
-    @include scrollbars(5px, $highlighted-text, #0000);
+	@include scrollbars(5px, $highlighted-text, #0000);
+}
+
+.full-page {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+}
+
+.profile-navigator {
+	position: fixed;
+	z-index: 100;
 }

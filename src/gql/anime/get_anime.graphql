@@ -1,0 +1,37 @@
+query GetAnimeBySlug($slug: String!) {
+	anime: findAnimeBySlug(slug: $slug) {
+		titles {
+			canonical
+			canonicalLocale
+			alternatives
+			localized
+		}
+		bannerImage {
+			...image
+		}
+		posterImage {
+			...image
+		}
+		description
+		averageRating
+		season
+		startDate
+	}
+}
+
+fragment image on Image {
+	blurhash
+	original {
+		...iview
+	}
+	views {
+		...iview
+	}
+}
+
+fragment iview on ImageView {
+	height
+	width
+	name
+	url
+}
