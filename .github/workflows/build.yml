@@ -24,9 +24,7 @@ jobs:
     - name: Upload a Build Artifact
       uses: actions/upload-artifact@v2.2.1
       with:
-        # Artifact name
         name: kitsu-io-build
-        # A file, directory or wildcard pattern that describes what to upload
         path: build/**
   deploy-alpha:
     runs-on: self-hosted
