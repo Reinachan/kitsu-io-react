@@ -28,6 +28,7 @@ jobs:
         path: build/**
   deploy-alpha:
     runs-on: self-hosted
+    needs: [build]
 
     steps:
       - name: Download a Build Artifact
