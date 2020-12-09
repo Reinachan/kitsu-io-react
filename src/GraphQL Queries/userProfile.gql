@@ -1,9 +1,11 @@
-query($slug: String!) {
-	profile: findProfileBySlug(slug: $slug) {
-		name
-		avatarImage {
-			views {
-				url
+query {
+	session {
+		profile {
+			name
+			avatarImage {
+				views {
+					url
+				}
 			}
 		}
 	}

@@ -22,7 +22,7 @@ export default function App() {
 
 					<div className="page-content">
 						<div className="profile-navigator">
-							<ProfileNav slug="Reinachan" />
+							<ProfileNav />
 						</div>
 						<Routes />
 					</div>

@@ -5,35 +5,29 @@ import './scss/profile-nav.scss';
 
 const query = loader('./GraphQL Queries/userProfile.gql');
 
-type ProfileNavProps = {
-	slug: string
-};
+export default function ProfileNav() {
 
-export default function ProfileNav(props: ProfileNavProps) {
-	const { slug } = props;
-
-	const { data, loading } = useQuery(query, {
-		variables: {
-			slug: slug,
-		},
-	});
+	const { data, loading } = useQuery(query);
 	
+	console.log(data)
+
+
 	return (
 		<>
 			<div className="profile-nav">
 				{
 					!loading 
-					? 
+					?
 					<div className="user-profile">
 						<div className="profile-content">
 							<img
 								className="bell"
-								src="../bell.svg"
+								src="./bell.svg"
 								alt="bell symbol"
 							/>
-							<span className="name">{data.profile.name}</span>
+							<span className="name">{data.name}</span>
 							<span>View Profile</span>
-							<img src={data.profile.avatarImage?.views[3].url} alt="profile"></img>
+							<img src={data.avatarImage?.views[3].url} alt="profile"></img>
 						</div>
 						<div className="blurred"></div>
 					</div>
