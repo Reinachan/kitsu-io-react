@@ -22,9 +22,45 @@ body {
 .full-page {
 	display: grid;
 	grid-template-columns: 300px 1fr;
+	@media screen and (max-width: 1400px) {
+		grid-template-columns: 1fr;
+	}
 }
 
 .profile-navigator {
 	position: fixed;
 	z-index: 100;
+}
+.page-content {
+	grid-template-columns: 1fr;
+}
+.hamburger-menu {
+	display: none;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	background-color: $poster-username-foreground-colour;
+	bottom: 20px;
+	left: 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	padding: 0;
+	cursor: pointer;
+
+	svg {
+		padding: 0;
+		margin: 0;
+		margin-top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: 1400px) {
+		display: block;
+	}
+}
+.hamburger-menu .visible {
+	display: block;
 }

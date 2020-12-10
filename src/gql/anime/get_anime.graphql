@@ -16,6 +16,16 @@ query GetAnimeBySlug($slug: String!) {
 		averageRating
 		season
 		startDate
+		episodeCount
+		subtype
+		status
+		tba
+		categories(first: 50) {
+			nodes {
+				title
+				id
+			}
+		}
 	}
 }
 

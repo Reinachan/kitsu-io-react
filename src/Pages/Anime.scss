@@ -1,38 +1,22 @@
 @import '../scss/_colours-and-fonts';
 
 .page {
+	transform: translateY(-110px);
 	display: grid;
-	grid-template-columns: 1fr 1024px 1fr;
-	grid-row: 300px auto 1f;
+	grid-template-columns: 50px 1fr 1024px 1fr 50px;
+	grid-row: 800px 300px auto 1fr;
 
-	div {
-		grid-column: 2;
-		grid-row: 2 / span 2;
+	.top-anime {
+		grid-column: 3;
+		grid-row: 1;
 
 		z-index: 1;
 	}
+	.synopsis {
+		grid-column: 3;
+		grid-row: 2;
 
-	.bg {
-		display: block;
-		height: 400px;
-		grid-column: 1 / span 3;
-		grid-row: 1 / span 2;
-
-		position: relative;
-
-		background-size: cover;
-		background-position: center center;
-		background-attachment: fixed; // just cuz its fun feel free to remove
-
-		&::before {
-			content: '';
-			height: 200px;
-			width: 100%;
-			position: absolute;
-			bottom: 0;
-
-			background: linear-gradient(0deg, rgba($background-colour, 1) 0%, rgba($background-colour, 0) 100%);
-		}
+		z-index: 1;
 	}
 }
 
@@ -41,19 +25,82 @@
 	grid-template-columns: 1fr auto;
 	grid-auto-flow: row;
 
-	.side {
-		grid-column: 3;
+	.media-details {
+		grid-column: 1;
+		grid-row: 1;
+		margin-left: 0;
+	}
+
+	.poster-and-edit {
+		grid-column: 2;
+		grid-row-start: 1;
+		grid-row-end: 3;
+	}
+	h1 {
+		grid-row: 2;
+		grid-column: 1;
+		margin: 0;
+		display: block;
+	}
+	.facts-line {
+		grid-row: 3;
+		grid-column: 1;
+	}
+	.tagCategories {
+		grid-row: 4;
+		grid-column: 1;
 	}
 }
-
 .poster-image {
 	max-width: 250px;
 	border-radius: 10px 10px 5px 5px;
+	margin-bottom: 15px;
 }
-.ease-in-image {
-	position: absolute;
+
+.facts-line {
+	margin-bottom: 15px;
+
+	span {
+		margin-left: 5px;
+		font-weight: 300;
+		color: $grayed-out-text;
+
+		& > span {
+			font-weight: 400;
+			color: white;
+		}
+		&:first-of-type {
+			margin-left: 0;
+
+			span {
+				margin-left: 5px;
+			}
+		}
+	}
+	.facts-divider {
+		margin-left: 15px;
+		margin-right: 10px;
+		font-weight: 400;
+	}
+}
+
+.jp-title {
+	color: $grayed-out-text;
+}
+
+.tagCategories {
+	line-height: 2em;
+}
+.edit-library {
+	background: none;
+	border: none;
+	padding: 0;
+	color: $highlighted-text;
+	cursor: pointer;
+	text-align: center;
 	width: 100%;
-	height: 100px;
-	top: 300px;
-	background: black;
+	margin-bottom: 20px;
+}
+.watching-status {
+	margin-bottom: 10px;
 }

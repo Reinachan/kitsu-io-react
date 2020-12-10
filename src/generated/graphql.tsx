@@ -3089,7 +3089,7 @@ export type GetAnimeBySlugQuery = (
   { __typename?: 'Query' }
   & { anime?: Maybe<(
     { __typename?: 'Anime' }
-    & Pick<Anime, 'description' | 'averageRating' | 'season' | 'startDate'>
+    & Pick<Anime, 'description' | 'averageRating' | 'season' | 'startDate' | 'episodeCount' | 'subtype' | 'status' | 'tba'>
     & { titles: (
       { __typename?: 'TitlesList' }
       & Pick<TitlesList, 'canonical' | 'canonicalLocale' | 'alternatives' | 'localized'>
@@ -3099,6 +3099,12 @@ export type GetAnimeBySlugQuery = (
     ), posterImage: (
       { __typename?: 'Image' }
       & ImageFragment
+    ), categories: (
+      { __typename?: 'CategoryConnection' }
+      & { nodes?: Maybe<Array<Maybe<(
+        { __typename?: 'Category' }
+        & Pick<Category, 'title' | 'id'>
+      )>>> }
     ) }
   )> }
 );
@@ -3323,6 +3329,16 @@ export const GetAnimeBySlugDocument = gql`
     averageRating
     season
     startDate
+    episodeCount
+    subtype
+    status
+    tba
+    categories(first: 50) {
+      nodes {
+        title
+        id
+      }
+    }
   }
 }
     ${ImageFragmentDoc}`;
@@ -3356,7 +3372,7 @@ export const GetAnimeListDocument = gql`
     query GetAnimeList($slug: String!) {
   profile: findProfileBySlug(slug: $slug) {
     library {
-      completed(mediaType: ANIME, first: 10) {
+      completed(mediaType: ANIME, first: 40) {
         nodes {
           media {
             posterImage {

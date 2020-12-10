@@ -15,35 +15,6 @@
 	}
 }
 
-.profile-banner {
-	white-space: pre-line;
-	word-wrap: break-word;
-	max-height: 50%;
-	overflow: hidden;
-	position: relative;
-	.banner-image {
-		transform: translateY(-10%);
-	}
-}
-.profile-banner .img-fade-out {
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	text-align: center;
-	margin: 0;
-	height: 150px;
-	color: $highlighted-text;
-
-	// make the text unselectable
-	-webkit-user-select: none; /* Safari */
-	-moz-user-select: none; /* Firefox */
-	-ms-user-select: none; /* IE10+/Edge */
-	user-select: none; /* Standard */
-
-	/* "transparent" only works here because == rgba(0,0,0,0) */
-	background-image: linear-gradient(to bottom, #16111600, $background-colour);
-}
 .library-list {
 	display: block;
 	width: 1fr;
@@ -51,4 +22,13 @@
 	grid-gap: 10px;
 	grid-template-columns: 50px 1fr 50px;
 	max-width: 1500px;
+}
+.bg {
+	height: 400px;
+}
+@import '../scss/_colours-and-fonts';
+
+.banner {
+	display: block;
+	height: 400px;
 }

@@ -7,6 +7,11 @@
 	background-color: $sidebar;
 	width: 300px;
 	height: 100%;
+	box-shadow: 0 0 10px black;
+
+	@media screen and (max-width: 1400px) {
+		display: none;
+	}
 }
 .kitsu-logo {
 	margin-top: 30px;
@@ -35,4 +40,35 @@
 			}
 		}
 	}
+}
+
+.hamburger-menu {
+	display: none;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	background-color: $poster-username-foreground-colour;
+	bottom: 20px;
+	left: 20px;
+	text-align: center;
+	border-radius: 10px;
+	border: none;
+	color: white;
+	padding: 0;
+	cursor: pointer;
+
+	svg {
+		padding: 0;
+		margin: 0;
+		margin-top: 50%;
+		transform: translateY(-50%);
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: 1400px) {
+		display: block;
+	}
+}
+.hamburger-menu .visible {
+	display: block;
 }

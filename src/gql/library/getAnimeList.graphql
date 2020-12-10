@@ -1,7 +1,7 @@
 query GetAnimeList($slug: String!) {
 	profile: findProfileBySlug(slug: $slug) {
 		library {
-			completed(mediaType: ANIME, first: 20) {
+			completed(mediaType: ANIME, first: 40) {
 				nodes {
 					media {
 						posterImage {
