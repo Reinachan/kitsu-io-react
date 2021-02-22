@@ -1,24 +1,59 @@
-import { useGetProfileBySlugQuery } from "../generated/graphql";
-import { useParams } from "react-router-dom";
+import {
+	useGetProfileBySlugQuery,
+	GetProfileFragment,
+} from '../generated/graphql';
+import { useParams } from 'react-router-dom';
+import { InfiniteLoader, List } from 'react-virtualized';
 import React from 'react';
-import Post from '../post';
-import '../scss/posts.scss';
+import Post from '../controls/posts/post';
+import '../scss/Posts/posts.scss';
 
 type UserUriParams = {
-	slug: string
+	slug: string;
 };
 
 export default function User() {
 	const { slug } = useParams<UserUriParams>();
-	const { data, loading, error } = useGetProfileBySlugQuery({
+	const isId = /^[0-9]+$/.test(slug);
+
+	const { data, loading, error, fetchMore } = useGetProfileBySlugQuery({
 		variables: {
 			slug: slug,
+			id: isId ? slug : '0',
+			isId: isId,
+			postFirst: 10,
 		},
-		errorPolicy: "all"
+		errorPolicy: 'all',
 	});
 
+	let profile: GetProfileFragment | undefined | null =
+		data?.findProfileById ?? data?.findProfileBySlug;
+
+	/* let startCursor = profile?.posts?.pageInfo?.startCursor;
+	let endCursor = profile?.posts?.pageInfo?.endCursor; */
+
+	/* const remoteRowCount: number | null | undefined = profile?.posts.totalCount; */
+
+	/* const list: number[] = []; */
+
+	/* function isRowLoaded(index: number) {
+		return !!list[index];
+	} */
+
+	/* function loadMoreRows(startIndex: string, stopIndex: string) {
+		fetchMore({
+			variables: {
+				slug: slug,
+				id: isId ? slug : '0',
+				isId: isId,
+				postCursor: startIndex,
+				postFirst: stopIndex,
+			},
+		});
+	} */
+
 	if (loading) {
-		return <div className="loading-posts"></div>;
+		return <div className='loading-posts'></div>;
 	}
 
 	if (error !== undefined) {
@@ -29,17 +64,25 @@ export default function User() {
 		return <div>User doesnt exist</div>;
 	}
 
-	if (data.profile === undefined || data.profile == null) {
+	if (profile === undefined || profile == null) {
 		return <div>Profile doesnt exist</div>;
 	}
 
+	console.log(data);
+
 	return (
-		data.profile.posts.nodes === undefined || data.profile.posts.nodes == null
-		? <div> No posts </div>
-		: <div className="posts-list">
-			{
-				data.profile.posts.nodes.filter(x => x).map((x: any) => <Post post={x} />) 
-			}
-		</div>
+		<>
+			{profile.posts.nodes === undefined || profile.posts.nodes == null ? (
+				<div> No posts </div>
+			) : (
+				profile?.posts?.nodes
+					?.filter((x: any) => x)
+					.map((x: any) => (
+						<div className='posts-list'>
+							<Post post={x} />
+						</div>
+					))
+			)}
+		</>
 	);
 }

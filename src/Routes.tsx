@@ -6,6 +6,7 @@ import Groups from './Pages/Groups';
 import Library from './Pages/Library';
 import User from './Pages/User';
 import Anime from './Pages/Anime';
+import NotFound from './Pages/NotFound';
 
 export default function Routes() {
     return (
@@ -19,7 +20,7 @@ export default function Routes() {
             <Route path="/groups">
                 <Groups />
             </Route>
-            <Route path="/user/:slug">
+            <Route path="/users/:slug">
                 <User />
             </Route>
             <Route path="/anime/:slug">
@@ -27,6 +28,9 @@ export default function Routes() {
             </Route>
             <Route exact path="/">
                 <Redirect to="/library" />
+            </Route>
+            <Route path="/404">
+                <NotFound />
             </Route>
         </Switch>
     );

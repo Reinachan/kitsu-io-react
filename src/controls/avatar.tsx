@@ -5,3 +5,10 @@ export const AvatarSmall = styled.img`
 	height: 30px;
 	margin-right: -10px;
 `;
+
+export const NoAvatar = styled.div`
+	border-radius: 50%;
+	height: 30px;
+	margin-right: -10px;
+	background-color: grey;
+`;

@@ -1,0 +1,59 @@
+@import '../_colours-and-fonts';
+
+.posts-list {
+    margin: 5px;
+    margin-top: 100px;
+    width: 100%;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+// loading animation
+@mixin loading-posts(
+    $activeColor: #ff8d78,
+    $selector: '&::before',
+    $time: 1.5s
+) {
+    @keyframes spinner {
+        0% {
+            transform: translate3d(-50%, -50%, 0) rotate(0deg);
+        }
+
+        100% {
+            transform: translate3d(-50%, -50%, 0) rotate(360deg);
+        }
+    }
+
+    animation-play-state: running;
+    opacity: 1;
+    position: relative;
+
+    &.-paused {
+        animation-play-state: paused;
+        opacity: 0.2;
+        transition: opacity linear 0.1s;
+    }
+
+    #{$selector} {
+        animation: $time linear infinite spinner;
+        animation-play-state: inherit;
+        border: solid 3px #dedede;
+        border-bottom-color: #{$activeColor};
+        border-radius: 50%;
+        content: '';
+        height: 40px;
+        left: 50%;
+        opacity: inherit;
+        position: absolute;
+        top: 50%;
+        transform: translate3d(-50%, -50%, 0);
+        width: 40px;
+        will-change: transform;
+    }
+}
+
+.loading-posts {
+    @include loading-posts;
+    height: 100vh;
+}

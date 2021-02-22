@@ -1,0 +1,77 @@
+{
+  "possibleTypes": {
+    "AmountConsumed": [
+      "AnimeAmountConsumed",
+      "MangaAmountConsumed"
+    ],
+    "CategoryBreakdown": [
+      "AnimeCategoryBreakdown",
+      "MangaCategoryBreakdown"
+    ],
+    "Episodic": [
+      "Anime"
+    ],
+    "Error": [
+      "Generic"
+    ],
+    "FavoriteItemUnion": [
+      "Anime",
+      "Character",
+      "Manga",
+      "Person"
+    ],
+    "MappingItemUnion": [
+      "Anime",
+      "Category",
+      "Character",
+      "Episode",
+      "Manga",
+      "Person",
+      "Producer"
+    ],
+    "Media": [
+      "Anime",
+      "Manga"
+    ],
+    "Streamable": [
+      "StreamingLink",
+      "Video"
+    ],
+    "Unit": [
+      "Chapter",
+      "Episode"
+    ],
+    "WithTimestamps": [
+      "Account",
+      "Anime",
+      "Category",
+      "Chapter",
+      "Character",
+      "CharacterVoice",
+      "Comment",
+      "Episode",
+      "Favorite",
+      "ImageView",
+      "LibraryEntry",
+      "LibraryEvent",
+      "Manga",
+      "Mapping",
+      "MediaCharacter",
+      "MediaProduction",
+      "MediaReaction",
+      "MediaStaff",
+      "Person",
+      "Post",
+      "ProSubscription",
+      "Producer",
+      "Profile",
+      "Quote",
+      "QuoteLine",
+      "SiteLink",
+      "Streamer",
+      "StreamingLink",
+      "Video",
+      "Volume"
+    ]
+  }
+}

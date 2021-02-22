@@ -1,10 +1,10 @@
 import { useGetAnimeBySlugQuery, Category, Maybe } from '../generated/graphql';
 import { useParams } from 'react-router-dom';
 import React from 'react';
-import CollapsedText from '../collapsedText';
+import CollapsedText from '../controls/posts/collapsedText';
 import BannerImage from '../controls/bannerImage';
 import Dropdown from '../controls/dropdown';
-import MediaTags from '../controls/mediaTags';
+import MediaTags from '../controls/media/mediaTags';
 import './Anime.scss';
 
 type AnimeUriParams = {

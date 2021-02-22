@@ -1,0 +1,12 @@
+query userSession {
+	session {
+		profile {
+			name
+			avatarImage {
+				views {
+					url
+				}
+			}
+		}
+	}
+}

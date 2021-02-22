@@ -1,8 +1,8 @@
 import { useGetAnimeListQuery } from "./generated/graphql";
 
 import React from 'react'
-import MediaEntryLibrary from './controls/media-entry';
-import './scss/library-list.scss'
+import MediaEntryLibrary from './controls/media/media-entry';
+import './scss/Library/library-list.scss'
 
 
 export default function LibraryList() {

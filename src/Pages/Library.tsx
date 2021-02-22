@@ -1,7 +1,7 @@
 import React from 'react';
 import LibraryList from '../LibraryList';
 import BannerImage from '../controls/bannerImage'
-import '../scss/library.scss';
+import '../scss/Library/library.scss';
 
 
 export default function Library() {
