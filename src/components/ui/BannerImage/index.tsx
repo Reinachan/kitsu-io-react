@@ -1,18 +1,17 @@
-import React from 'react'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 
 type BannerProps = {
-  url: any,
-  className: string
-}
+	url: any;
+	className: string;
+};
 
 export default function BannerImage(props: BannerProps) {
-
-  const Banner:any = styled.div`
+	const Banner = styled.div`
 		position: relative;
 
 		background-size: cover;
-    background-position: center center;
+		background-position: center center;
 
 		&::before {
 			content: '';
@@ -23,9 +22,12 @@ export default function BannerImage(props: BannerProps) {
 
 			background: linear-gradient(0deg, #161116ff 0%, #16111600 100%);
 		}
-  `
+	`;
 
-  return (
-      <Banner className={props.className} style={{ backgroundImage: `url(${props.url})`}} />
-  )
+	return (
+		<Banner
+			className={props.className}
+			style={{ backgroundImage: `url(${props.url})` }}
+		/>
+	);
 }

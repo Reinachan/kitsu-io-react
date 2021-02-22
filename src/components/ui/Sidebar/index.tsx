@@ -1,38 +1,41 @@
 import { NavLink } from 'react-router-dom';
 import React from 'react';
-import './scss/nav.scss';
+import '../../../scss/nav.scss';
 
 export default function Nav(this: any) {
 	return (
 		<>
-			<div className="sidebar">
-				<div className="kitsu-logo">
-					<img src="../kitsu-logo.svg" alt="Kitsu Logo" />
+			<div className='sidebar'>
+				<div className='kitsu-logo'>
+					<img src='../kitsu-logo.svg' alt='Kitsu Logo' />
 				</div>
-				<div className="main-navigation">
+				<div className='main-navigation'>
 					<nav>
 						<ul>
 							<li>
-								<NavLink activeClassName="active-tab" to="/user/">
+								<NavLink activeClassName='active-tab' to='/user/'>
 									User
 								</NavLink>
 							</li>
 							<li>
-								<NavLink activeClassName="active-tab" to="/library">
+								<NavLink activeClassName='active-tab' to='/library'>
 									Library
 								</NavLink>
 							</li>
 							<li>
-								<NavLink activeClassName="active-tab" to="/community">
+								<NavLink activeClassName='active-tab' to='/community'>
 									Community
 								</NavLink>
 							</li>
 							<li>
 								<NavLink
-									activeClassName="active-tab"
-									to="/browse"
+									activeClassName='active-tab'
+									to='/browse'
 									isActive={(match, location) => {
-										if (!match && !/\/(anime|manga)\//.test(location.pathname)) {
+										if (
+											!match &&
+											!/\/(anime|manga)\//.test(location.pathname)
+										) {
 											return false;
 										}
 
@@ -42,7 +45,7 @@ export default function Nav(this: any) {
 								</NavLink>
 							</li>
 							<li>
-								<NavLink activeClassName="active-tab" to="/groups">
+								<NavLink activeClassName='active-tab' to='/groups'>
 									Groups
 								</NavLink>
 							</li>

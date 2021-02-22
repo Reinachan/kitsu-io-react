@@ -5,8 +5,9 @@ import {
 import { useParams } from 'react-router-dom';
 import { InfiniteLoader, List } from 'react-virtualized';
 import React from 'react';
-import Post from '../controls/posts/post';
+import Post from '../components/posts/post';
 import '../scss/Posts/posts.scss';
+import Loading from '../components/ui/Loading';
 
 type UserUriParams = {
 	slug: string;
@@ -53,7 +54,7 @@ export default function User() {
 	} */
 
 	if (loading) {
-		return <div className='loading-posts'></div>;
+		return <Loading />;
 	}
 
 	if (error !== undefined) {

@@ -4,6 +4,9 @@
   "private": true,
   "dependencies": {
     "@apollo/client": "^3.3.11",
+    "@fortawesome/fontawesome-svg-core": "^1.2.34",
+    "@fortawesome/free-solid-svg-icons": "^5.15.2",
+    "@fortawesome/react-fontawesome": "^0.1.14",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.5",
     "@testing-library/user-event": "^12.7.2",
@@ -50,6 +53,10 @@
     "development": []
   },
   "devDependencies": {
+    "@babel/core": "^7.12.8",
+    "@babel/plugin-proposal-class-properties": "^7.12.1",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/preset-react": "^7.12.7",
     "@graphql-codegen/cli": "^1.20.1",
     "@graphql-codegen/fragment-matcher": "^2.0.1",
     "@graphql-codegen/introspection": "1.18.1",
